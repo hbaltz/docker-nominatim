@@ -47,7 +47,17 @@ RUN service postgresql start && \
 
 COPY start.sh /app/start.sh # Recover it from this repositry
 CMD /app/start.sh
- ```
+```
+
+## You can find two examples 
+* [Angola](config-angola/Dockerfile)
+* [Nigeria](config-nigeria/Dockerfile)
+
+### Pull images
+```bash
+docker pull hbaltz/nominatim:angola
+docker pull hbaltz/nominatim:nigeria
+```
 
 ## Summary
 
