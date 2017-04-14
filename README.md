@@ -59,6 +59,44 @@ docker pull hbaltz/nominatim:angola
 docker pull hbaltz/nominatim:nigeria
 ```
 
+## Run nominatim
+```bash
+docker run -d -p 8080:8080 hbaltz/nominati:TAG
+```
+
+Example
+```bash
+docker run -d -p 8080:8080 hbaltz/nominati::angola
+```
+
+## Use nominatim
+
+### Geocoding
+
+```bash
+http://<ipServer:port>/search?q=<name-of-the-place-to-geocode>&format=json&addressdetails=1&limit=1
+```
+Where :
+  - ipServer:port is the ip adress of where the docker is deployed
+
+Example of geocoding
+```bash
+http://localhost:8080/search?q=abuja&format=json&addressdetails=1&limit=1
+```
+
+### Reverse geocoding
+
+```bash
+http://<ipServer:port>/reverse?format=json&lat=<latitude>&lon=<longitude>&limit=1
+```
+Where :
+  - ipServer:port is the ip adress of where the docker is deployed
+ 
+Example of reverse geocoding
+```bash
+http://localhost:8080/nomAngola/reverse?format=json&lat=-8.861800&lon=13.304520&limit=1
+```
+
 ## Summary
 
 A docker image with nominatim installed
